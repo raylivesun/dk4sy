@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<catalog
+    xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="urn:oasis:names:tc:entity:xmlns:xml:catalog
+        http://www.oasis-open.org/committees/entity/release/1.1/catalog.xsd"
+    prefer="public">
+    <public publicId="http://www.matrix.org" uri="matrix" />
+    <delegatePublic publicIdStartString="Lives" catalog="matrix" />
+    <delegateURI uriStartString="StartLives" catalog="matrix" />
+    <delegateSystem systemIdStartString="StartSystem" catalog="matrix" />
+    <group>
+        <nextCatalog catalog="matrix" />
+        <public publicId="http://www.matrix.org" uri="matrix" />
+        <rewriteSystem systemIdStartString="input" rewritePrefix="/home/admin/" />
+        <system systemId="popos-linux-76" uri="matrix" />
+        <systemSuffix systemIdSuffix="linux" uri="matrix" />
+    </group>
+</catalog>

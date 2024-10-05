@@ -1,0 +1,148 @@
+{
+    "$schema": "https://swc.rs/schema.json",
+    "type": "object",
+    "properties": {
+        "name": {
+            "type": "string"
+        },
+        "age": {
+            "type": "integer",
+            "minimum": 0
+        },
+        "address": {
+            "type": "object",
+            "properties": {
+                "street": {
+                    "type": "string"
+                },
+                "city": {
+                    "type": "string"
+                },
+                "state": {
+                    "type": "string"
+                },
+                "zip": {
+                    "type": "string"
+                }
+            },
+            "required": ["street", "city", "state", "zip"]
+        },
+        "hobbies": {
+            "type": "array",
+            "items": {
+                "type": "string"
+            }
+        }
+    },
+
+    "required": ["name", "age", "address", "hobbies"],
+    "additionalProperties": false,
+    "minProperties": 4,
+    "maxProperties": 5,
+    "patternProperties": {
+        ".*": {
+            "type": "string"
+        }
+    },
+    "anyOf": [
+        {
+            "properties": {
+                "gender": {
+                    "type": "string",
+                    "enum": ["male", "female"]
+                }
+            },
+            "required": ["gender"]
+        }        
+    ],
+    "allOf": [
+        {
+            "properties": {
+                "occupation": {
+                    "type": "string"
+                },
+                "education": {
+                    "type": "string"
+                }
+            },
+            "required": ["occupation", "education"]
+        }
+    ],
+    "oneOf": [
+        {
+            "properties": {
+                "siblings": {
+                    "type": "integer",
+                    "minimum": 0
+                }
+            },
+            "required": ["siblings"]
+        }
+    ],
+    "not": {
+        "properties": {
+            "pets": {
+                "type": "object",
+                "properties": {
+                    "name": {
+                        "type": "string"
+                    },
+                    "type": {
+                        "type": "string"
+                    }
+                },
+                "required": ["name", "type"]
+            }
+        },
+        "required": ["pets"]
+    
+        },
+        "dependencies": {
+            "siblings": {
+                "oneOf": [
+                    {
+                        "properties": {
+                            "siblings": {
+                                "minimum": 1
+                            }
+                        },
+                        "required": ["siblings"]
+                    },
+                    {
+                        "properties": {
+                            "siblings": {
+                                "minimum": 0
+                            }
+                        },
+                        "required": ["siblings"]
+                    }
+                ]
+            }
+        },
+        "if": {
+            "properties": {
+                "gender": {
+                    "type": "string",
+                    "enum": ["male", "female"]
+                }
+            },
+            "required": ["gender"]
+        },
+        "then": {
+            "properties": {
+                "occupation": {
+                    "type": "string"
+                }
+            },
+            "required": ["occupation"]
+        },
+        "else": {
+            "properties": {
+                "education": {
+                    "type": "string"
+                }
+            },
+            "required": ["education"]
+        }   
+
+}

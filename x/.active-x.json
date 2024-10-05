@@ -1,0 +1,24 @@
+{
+  "ip": "177.72.183.218",
+  "network": {
+    "cidr": "177.72.176.0/21",
+    "hosts": {
+      "start": "177.72.176.1",
+      "end": "177.72.183.254"
+    },
+    "autonomous_system": {
+      "asn": 262549,
+      "name": "CELINET INFORMATICA LTDA-ME",
+      "organization": "CELINET INFORMATICA LTDA-ME",
+      "country": "BR",
+      "rir": "LACNIC"
+    }
+  },
+  "location": {
+    "city": "Itabaianinha",
+    "country": "Brazil",
+    "timezone": "America/Maceio",
+    "latitude": -11.2716,
+    "longitude": -37.7884
+  }
+}
